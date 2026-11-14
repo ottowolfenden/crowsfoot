@@ -1,1 +1,14 @@
-[{ "footA": ">" }, { "footB": "<" }, { "circA": "o" }, { "circB": "o" }]
+{
+    "footA": ">",
+    "footB": "<",
+    "circA": "o",
+    "circB": "o",
+    "lineA": "|",
+    "lineB": "|",
+    "footcircA": ">o",
+    "footcircB": "o<",
+    "footlineA": ">|",
+    "footlineB": "|<",
+    "circlineA": "o|",
+    "circlineB": "o|"
+}
