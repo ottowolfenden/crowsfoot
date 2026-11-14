@@ -5,6 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 
 node src/merge.mjs
 latexmk example.tex \
+    -g \
     --lualatex \
     --auxdir=aux \
     --synctex=0 \
