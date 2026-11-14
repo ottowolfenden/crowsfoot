@@ -1,0 +1,65 @@
+\documentclass[margin=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\tikzset{
+    cf start/.style={
+        decoration={
+            markings,
+            mark=at position 0 with {
+                \draw (0.5,0) -- (0,0.3);
+                \draw (0.5,0) -- (0,-0.3);
+            }
+        },
+        postaction={decorate}
+    },
+    cf end/.style={
+        decoration={
+            markings,
+            mark=at position 1 with {
+                \draw (-0.5,0) -- (0,0.3);
+                \draw (-0.5,0) -- (0,-0.3);
+            }
+        },
+        postaction={decorate}
+    },
+    circ start/.style={
+        decoration={
+            markings,
+            mark=at position 0 with {
+                \node[circle, draw, minimum size=0.5cm] at (0.75,0) {};
+            }
+        },
+        shorten <=1cm,
+        postaction={decorate}
+    },
+    circ end/.style={
+        decoration={
+            markings,
+            mark=at position 1 with {
+                \node[circle, draw, minimum size=0.5cm] at (-0.75,0) {};
+            }
+        },
+        shorten >=1cm,
+        postaction={decorate}
+    },
+    >-</.style={cf start, cf end},
+    -</.style={cf end},
+    >-/.style={cf start},
+    o-o/.style={circ start, circ end},
+    o-/.style={circ start},
+    -o/.style={circ end},
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \node[rectangle, draw, inner sep=10pt] (a) at (0,0) {Entity A};
+    \node[rectangle, draw, inner sep=10pt] (b) at (5,0) {Entity B};
+    \node[rectangle, draw, inner sep=10pt] (c) at (5,-5) {Entity C};
+
+    \draw[o-o] (a) -- (b);
+    \draw[>-<] (b) -- (c);
+\end{tikzpicture}
+
+\end{document}
