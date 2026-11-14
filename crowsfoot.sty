@@ -1,5 +1,6 @@
-\documentclass[margin=10pt]{standalone}
-\usepackage{tikz}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{crowsfoot}[2026/11/14 Crows's foot TikZ diagrams]
+\RequirePackage{tikz}
 \usetikzlibrary{decorations.markings}
 
 \tikzset{
@@ -42,7 +43,10 @@
         },
         shorten >=1cm,
         postaction={decorate}
-    },
+    }
+}
+
+\tikzset{
     >-</.style={cf start, cf end},
     -</.style={cf end},
     >-/.style={cf start},
@@ -50,16 +54,3 @@
     o-/.style={circ start},
     -o/.style={circ end},
 }
-
-\begin{document}
-
-\begin{tikzpicture}
-    \node[rectangle, draw, inner sep=10pt] (a) at (0,0) {Entity A};
-    \node[rectangle, draw, inner sep=10pt] (b) at (5,0) {Entity B};
-    \node[rectangle, draw, inner sep=10pt] (c) at (5,-5) {Entity C};
-
-    \draw[o-o] (a) -- (b);
-    \draw[>-<] (b) -- (c);
-\end{tikzpicture}
-
-\end{document}
