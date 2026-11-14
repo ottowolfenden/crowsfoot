@@ -4,11 +4,14 @@
 \begin{document}
 
 \begin{tikzpicture}
-    \node[rectangle, draw, inner sep=10pt] (a) at (0,0) {Entity A};
-    \node[rectangle, draw, inner sep=10pt] (b) at (5,0) {Entity B};
-    \node[rectangle, draw, inner sep=10pt] (c) at (5,-5) {Entity C};
+    \node[rectangle, draw, inner sep=10pt] (A) at (0,0) {Entity A};
+    \node[rectangle, draw, inner sep=10pt] (B) at (5,0) {Entity B};
+    \node[rectangle, draw, inner sep=10pt] (C) at (5,-5) {Entity C};
+    \node[rectangle, draw, inner sep=10pt] (D) at (0,-5) {Entity D};
 
-    \draw[-o|] (a) -- (b);
-    \draw[|-o] (b) -- (c);
+    \draw[-|<] (A) -- (B);
+    \draw[|o-o<] (B) -- (C);
+    \draw[>|-<] (C) -- (D);
+    \draw[||-o] (D) -- (A);
 \end{tikzpicture}
 \end{document}
