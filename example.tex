@@ -8,8 +8,7 @@
     \node[rectangle, draw, inner sep=10pt] (b) at (5,0) {Entity B};
     \node[rectangle, draw, inner sep=10pt] (c) at (5,-5) {Entity C};
 
-    \draw[o-o] (a) -- (b);
-    \draw[>-<] (b) -- (c);
+    \draw[-o|] (a) -- (b);
+    \draw[|-o] (b) -- (c);
 \end{tikzpicture}
-
 \end{document}

@@ -2,7 +2,6 @@
 \ProvidesPackage{crowsfoot}[2026/11/14 Crows's foot TikZ diagrams]
 \RequirePackage{tikz}
 \usetikzlibrary{decorations.markings}
-
 \tikzset{
     footA/.style={
         decoration={
@@ -32,7 +31,6 @@
             },
         },
         postaction={decorate},
-        shorten <=1cm,
     },
     circB/.style={
         decoration={
@@ -42,7 +40,24 @@
             },
         },
         postaction={decorate},
-        shorten >=1cm,
+    },
+    lineA/.style={
+        decoration={
+            markings,
+            mark=at position 0 with {
+                \draw (0.25,0.3) -- (0.25,-0.3);
+            },
+        },
+        postaction={decorate},
+    },
+    lineB/.style={
+        decoration={
+            markings,
+            mark=at position 1 with {
+                \draw (-0.25,0.3) -- (-0.25,-0.3);
+            },
+        },
+        postaction={decorate},
     },
     footcircA/.style={
         decoration={
@@ -54,7 +69,17 @@
             },
         },
         postaction={decorate},
-        shorten <=1cm,
+    },
+    footlineA/.style={
+        decoration={
+            markings,
+            mark=at position 0 with {
+                \draw (0.5,0) -- (0,0.3);
+                \draw (0.5,0) -- (0,-0.3);
+                \draw (0.25,0.3) -- (0.25,-0.3);
+            },
+        },
+        postaction={decorate},
     },
     footcircB/.style={
         decoration={
@@ -66,15 +91,87 @@
             },
         },
         postaction={decorate},
-        shorten >=1cm,
+    },
+    footlineB/.style={
+        decoration={
+            markings,
+            mark=at position 1 with {
+                \draw (-0.5,0) -- (0,0.3);
+                \draw (-0.5,0) -- (0,-0.3);
+                \draw (-0.25,0.3) -- (-0.25,-0.3);
+            },
+        },
+        postaction={decorate},
+    },
+    circlineA/.style={
+        decoration={
+            markings,
+            mark=at position 0 with {
+                \node[circle, draw, minimum size=0.5cm] at (0.75,0) {};
+                \draw (0.25,0.3) -- (0.25,-0.3);
+            },
+        },
+        postaction={decorate},
+    },
+    circlineB/.style={
+        decoration={
+            markings,
+            mark=at position 1 with {
+                \node[circle, draw, minimum size=0.5cm] at (-0.75,0) {};
+                \draw (-0.25,0.3) -- (-0.25,-0.3);
+            },
+        },
+        postaction={decorate},
     },
 }
 
 \tikzset{
-    >-</.style={footA, footB},
-    -</.style={footB},
     >-/.style={footA},
-    o-o/.style={circA, circB},
+    -</.style={footB},
     o-/.style={circA},
     -o/.style={circB},
+    |-/.style={lineA},
+    -|/.style={lineB},
+    >o-/.style={footcircA},
+    -o</.style={footcircB},
+    >|-/.style={footlineA},
+    -|</.style={footlineB},
+    o|-/.style={circlineA},
+    -o|/.style={circlineB},
+    >-</.style={footA, footB},
+    >-o/.style={footA, circB},
+    >-|/.style={footA, lineB},
+    >-o</.style={footA, footcircB},
+    >-|</.style={footA, footlineB},
+    >-o|/.style={footA, circlineB},
+    o-</.style={circA, footB},
+    o-o/.style={circA, circB},
+    o-|/.style={circA, lineB},
+    o-o</.style={circA, footcircB},
+    o-|</.style={circA, footlineB},
+    o-o|/.style={circA, circlineB},
+    |-</.style={lineA, footB},
+    |-o/.style={lineA, circB},
+    |-|/.style={lineA, lineB},
+    |-o</.style={lineA, footcircB},
+    |-|</.style={lineA, footlineB},
+    |-o|/.style={lineA, circlineB},
+    >o-</.style={footcircA, footB},
+    >o-o/.style={footcircA, circB},
+    >o-|/.style={footcircA, lineB},
+    >o-o</.style={footcircA, footcircB},
+    >o-|</.style={footcircA, footlineB},
+    >o-o|/.style={footcircA, circlineB},
+    >|-</.style={footlineA, footB},
+    >|-o/.style={footlineA, circB},
+    >|-|/.style={footlineA, lineB},
+    >|-o</.style={footlineA, footcircB},
+    >|-|</.style={footlineA, footlineB},
+    >|-o|/.style={footlineA, circlineB},
+    o|-</.style={circlineA, footB},
+    o|-o/.style={circlineA, circB},
+    o|-|/.style={circlineA, lineB},
+    o|-o</.style={circlineA, footcircB},
+    o|-|</.style={circlineA, footlineB},
+    o|-o|/.style={circlineA, circlineB},
 }
