@@ -1,17 +1,8 @@
 import fs from "node:fs";
+import { pairs, mergeNames, tab } from "./utils.js";
 
-const tab = n => " ".repeat(4 * n);
 const symbolLines = fs.readFileSync(`templates/symbols.tex`, "utf8").split("\n");
 const srcLines = symbolLines.slice(0, symbolLines.lastIndexOf(tab(1) + "},") + 1);
-
-const pairs = ["foot", "circ"]
-    .reduce((acc, s) => [...acc, s + "A", s + "B"], [])
-    .flatMap((a, i, arr) => arr.slice(i + 1).map(b => [a, b]))
-    .filter(([name1, name2]) => {
-        const [ext1, ext2] = [name1, name2].map(s => s.slice(-1));
-        const [base1, base2] = [name1, name2].map(s => s.slice(0, -1));
-        return ext1 === ext2 && base1 !== base2;
-    });
 
 const getLines = name => {
     const startIndex = symbolLines.findIndex(l => l.startsWith(tab(1) + name)) + 1;
@@ -32,13 +23,8 @@ const getStyleLines = name => {
 };
 
 const combine = (name1, name2) => {
-    const [ext1, ext2] = [name1, name2].map(s => s.slice(-1));
-    const [base1, base2] = [name1, name2].map(s => s.slice(0, -1));
-    if (ext1 !== ext2 || base1 === base2) throw new Error();
-
-    const markPos = ext1 === "A" ? 0 : 1;
-    const newName = base1 + base2 + ext1;
-
+    const newName = mergeNames(name1, name2);
+    const markPos = newName.slice(-1) === "A" ? 0 : 1;
     return [
         `    ${newName}/.style={`,
         `        decoration={`,
