@@ -1,0 +1,4 @@
+{
+    "latex-workshop.latex.tools": [{ "name": "compile", "command": "./compile.sh" }],
+    "latex-workshop.latex.recipes": [{ "name": "LuaLaTeX", "tools": ["compile"] }]
+}
