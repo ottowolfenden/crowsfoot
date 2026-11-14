@@ -1,4 +1,4 @@
-export const bases = ["foot", "circ", "line"];
+export const bases = ["foot", "circ", "line", "dline"];
 
 export const getExt = name => name.slice(-1);
 export const getBase = name => name.slice(0, -1);

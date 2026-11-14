@@ -5,10 +5,12 @@
     "circB": "o",
     "lineA": "|",
     "lineB": "|",
+    "dlineA": "||",
+    "dlineB": "||",
     "footcircA": ">o",
     "footcircB": "o<",
     "footlineA": ">|",
     "footlineB": "|<",
-    "circlineA": "o|",
+    "circlineA": "|o",
     "circlineB": "o|"
 }
