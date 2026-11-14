@@ -1,10 +1,7 @@
 import fs from "node:fs";
 
 const tab = n => " ".repeat(4 * n);
-const [preamble, symbols, abbrs] = ["preamble", "symbols", "abbrs"].map(f =>
-    fs.readFileSync(`src/${f}.tex`, "utf8")
-);
-const symbolLines = symbols.split("\n");
+const symbolLines = fs.readFileSync(`templates/symbols.tex`, "utf8").split("\n");
 const srcLines = symbolLines.slice(0, symbolLines.lastIndexOf(tab(1) + "},") + 1);
 
 const pairs = ["foot", "circ"]
@@ -58,7 +55,4 @@ const combine = (name1, name2) => {
     ];
 };
 
-fs.writeFileSync(
-    "crowsfoot.sty",
-    [preamble, ...srcLines, ...pairs.flatMap(p => combine(...p)), "}\n", abbrs].join("\n")
-);
+console.log([...srcLines, ...pairs.flatMap(p => combine(...p)), "}\n"].join("\n"));
