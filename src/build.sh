@@ -8,6 +8,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"/..
     printf '\n'
     cat templates/symbols.tex
     printf '\n'
+    cat templates/defs.tex
     # node src/generate-aliases.mjs
 ) > crowsfoot.sty
 
