@@ -1,5 +1,5 @@
 {
-    "latex-workshop.latex.tools": [{ "name": "build", "command": "./src/build.sh" }],
+    "latex-workshop.latex.tools": [{ "name": "build", "command": "./scripts/build.sh" }],
     "latex-workshop.latex.recipes": [{ "name": "LuaLaTeX", "tools": ["build"] }],
     "ltex.enabled": []
 }

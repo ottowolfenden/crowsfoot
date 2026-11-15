@@ -1,4 +1,4 @@
-import aliases from "../templates/aliases.json" with { type: "json" };
+import aliases from "../components/aliases.json" with { type: "json" };
 
 const getExt = name => name.slice(-1);
 const getBase = name => name.slice(0, -1);

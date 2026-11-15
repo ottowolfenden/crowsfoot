@@ -4,12 +4,12 @@ set -e
 cd "$(dirname "${BASH_SOURCE[0]}")"/..
 
 (
-    cat templates/preamble.tex
+    cat components/preamble.tex
     printf '\n'
-    cat templates/symbols.tex
+    cat components/symbols.tex
     printf '\n'
-    cat templates/defs.tex
-    # node src/generate-aliases.mjs
+    cat components/defs.tex
+    # node scripts/generate-aliases.mjs
 ) > crowsfoot.sty
 
 latexmk example.tex \
