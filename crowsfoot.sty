@@ -2,6 +2,7 @@
 \ProvidesPackage{crowsfoot}[2026/11/14 Crows's foot TikZ diagrams]
 \RequirePackage{tikz}
 \usetikzlibrary{decorations.markings}
+
 \tikzset{
     footA/.style={
         decoration={
@@ -90,29 +91,6 @@
         },
         postaction={decorate},
     },
-    footlineA/.style={
-        decoration={
-            markings,
-            mark=at position 0 with {
-                \draw (0.5,0) -- (0,0.3);
-                \draw (0.5,0) -- (0,-0.3);
-                \draw (0.25,0.3) -- (0.25,-0.3);
-            },
-        },
-        postaction={decorate},
-    },
-    footdlineA/.style={
-        decoration={
-            markings,
-            mark=at position 0 with {
-                \draw (0.5,0) -- (0,0.3);
-                \draw (0.5,0) -- (0,-0.3);
-                \draw (0.4,0.3) -- (0.4,-0.3);
-                \draw (0.3,0.3) -- (0.3,-0.3);
-            },
-        },
-        postaction={decorate},
-    },
     footcircB/.style={
         decoration={
             markings,
@@ -120,6 +98,17 @@
                 \draw (-0.5,0) -- (0,0.3);
                 \draw (-0.5,0) -- (0,-0.3);
                 \node[circle, draw, minimum size=0.5cm] at (-0.75,0) {};
+            },
+        },
+        postaction={decorate},
+    },
+    footlineA/.style={
+        decoration={
+            markings,
+            mark=at position 0 with {
+                \draw (0.5,0) -- (0,0.3);
+                \draw (0.5,0) -- (0,-0.3);
+                \draw (0.25,0.3) -- (0.25,-0.3);
             },
         },
         postaction={decorate},
@@ -135,35 +124,12 @@
         },
         postaction={decorate},
     },
-    footdlineB/.style={
-        decoration={
-            markings,
-            mark=at position 1 with {
-                \draw (-0.5,0) -- (0,0.3);
-                \draw (-0.5,0) -- (0,-0.3);
-                \draw (-0.4,0.3) -- (-0.4,-0.3);
-                \draw (-0.3,0.3) -- (-0.3,-0.3);
-            },
-        },
-        postaction={decorate},
-    },
     circlineA/.style={
         decoration={
             markings,
             mark=at position 0 with {
                 \node[circle, draw, minimum size=0.5cm] at (0.75,0) {};
                 \draw (0.25,0.3) -- (0.25,-0.3);
-            },
-        },
-        postaction={decorate},
-    },
-    circdlineA/.style={
-        decoration={
-            markings,
-            mark=at position 0 with {
-                \node[circle, draw, minimum size=0.5cm] at (0.75,0) {};
-                \draw (0.4,0.3) -- (0.4,-0.3);
-                \draw (0.3,0.3) -- (0.3,-0.3);
             },
         },
         postaction={decorate},
@@ -177,40 +143,7 @@
             },
         },
         postaction={decorate},
-    },
-    circdlineB/.style={
-        decoration={
-            markings,
-            mark=at position 1 with {
-                \node[circle, draw, minimum size=0.5cm] at (-0.75,0) {};
-                \draw (-0.4,0.3) -- (-0.4,-0.3);
-                \draw (-0.3,0.3) -- (-0.3,-0.3);
-            },
-        },
-        postaction={decorate},
-    },
-    linedlineA/.style={
-        decoration={
-            markings,
-            mark=at position 0 with {
-                \draw (0.25,0.3) -- (0.25,-0.3);
-                \draw (0.4,0.3) -- (0.4,-0.3);
-                \draw (0.3,0.3) -- (0.3,-0.3);
-            },
-        },
-        postaction={decorate},
-    },
-    linedlineB/.style={
-        decoration={
-            markings,
-            mark=at position 1 with {
-                \draw (-0.25,0.3) -- (-0.25,-0.3);
-                \draw (-0.4,0.3) -- (-0.4,-0.3);
-                \draw (-0.3,0.3) -- (-0.3,-0.3);
-            },
-        },
-        postaction={decorate},
-    },
+    }
 }
 
 \tikzset{
