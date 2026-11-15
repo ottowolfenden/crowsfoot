@@ -1,16 +1,20 @@
 \documentclass[margin=10pt]{standalone}
 \usepackage{crowsfoot}
 
+\pagecolor{gray}
+
 \begin{document}
 
 \begin{tikzpicture}
-    \node[rectangle, draw, inner sep=10pt] (A) at (0,0) {Entity A};
-    \node[rectangle, draw, inner sep=10pt] (B) at (7,0) {Entity B};
-    \node[rectangle, draw, inner sep=10pt] (C) at (7,-7) {Entity C};
-    \node[rectangle, draw, inner sep=10pt] (D) at (0,-7) {Entity D};
+    \node[entity] (A) at (0,0) {Entity A};
+    \node[entity] (B) at (7,0) {Entity B};
+    \node[entity] (C) at (7,-7) {Entity C};
+    \node[entity] (D) at (0,-7) {Entity D};
 
-    \draw (A.east) to[o-o] (B.west);
-    \draw[red, thick, fill=green] (D.north) to[o-] (A.south);
-    \draw[blue, line width=5pt] (D.east) to[-o] (C.west);
+    \draw (A) to[o-o] (B);
+    \draw (B) to[-] (C);
+    \draw[red, thick, fill=green] (D) to[o-] (A);
+    \draw[blue, line width=5pt] (D) to[-o] (C);
 \end{tikzpicture}
+
 \end{document}
