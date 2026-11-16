@@ -4,5 +4,10 @@ export const allPairs = arr =>
         []
     );
 
-export const printLines = lines =>
-    lines.forEach(l => console.log(l.replace(/^\n+|\n+$/g, "")));
+export const linesToStr = lines =>
+    lines.reduce((acc, lineOrArr) => {
+        const tabs = Array.isArray(lineOrArr) ? " ".repeat(lineOrArr[0] * 4) : "";
+        const line = Array.isArray(lineOrArr) ? lineOrArr[1] : lineOrArr;
+        const newlinesRemoved = line.replace(/^\n+|\n+$/g, "");
+        return `${acc}${tabs}${newlinesRemoved}\n`;
+    }, "");
