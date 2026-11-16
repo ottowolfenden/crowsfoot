@@ -12,6 +12,11 @@ cd "$(dirname "${BASH_SOURCE[0]}")"/..
     cat components/defs.tex
 ) > crowsfoot.sty
 
+tex-fmt crowsfoot.sty \
+    --noconfig \
+    --nowrap \
+    --tabsize 4
+
 latexmk example.tex \
     --lualatex \
     -g \
