@@ -6,7 +6,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"/..
 (
     cat components/preamble.tex
     printf '\n'
-    cat components/symbols.tex
+    node scripts/generate-to-paths.mjs
     printf '\n'
     node scripts/generate-aliases.mjs
     cat components/defs.tex
