@@ -4,4 +4,5 @@ export const allPairs = arr =>
         []
     );
 
-export const printLines = lines => lines.forEach(l => console.log(l));
+export const printLines = lines =>
+    lines.forEach(l => console.log(l.replace(/^\n+|\n+$/g, "")));

@@ -1,5 +1,5 @@
 import aliases from "../components/aliases.json" with { type: "json" };
-import { allPairs, printLines, tab } from "./utils.js";
+import { allPairs, printLines } from "./utils.js";
 
 const baseSymbols = Object.keys(aliases);
 const fullAliases = allPairs(baseSymbols).map(([start, end]) => [
@@ -9,6 +9,6 @@ const fullAliases = allPairs(baseSymbols).map(([start, end]) => [
 
 printLines([
     "\\tikzset{",
-    ...fullAliases.map(([name, abbr]) => `${tab(1)}${abbr}/.style={${name}},`),
+    ...fullAliases.map(([name, abbr]) => `    ${abbr}/.style={${name}},`),
     "}\n"
 ]);
