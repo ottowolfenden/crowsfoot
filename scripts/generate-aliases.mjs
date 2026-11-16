@@ -1,22 +1,15 @@
 import aliases from "../components/aliases.json" with { type: "json" };
 
-const getExt = name => name.slice(-1);
-const getBase = name => name.slice(0, -1);
-
-const tab = " ".repeat(4);
-
-const getCombos = arr =>
-    arr.reduce((acc, a) => [...acc, ...arr.reduce((bcc, b) => [...bcc, [a, b]], [])], []);
-
-const names = [...new Set(Object.keys(aliases).map(getBase))];
-
+const baseSymbols = Object.keys(aliases);
+const fullAliases = baseSymbols
+    .reduce(
+        (acc, start) => [
+            ...acc,
+            ...baseSymbols.reduce((acc2, end) => [...acc2, [start, end]], [])
+        ],
+        []
+    )
+    .map(([start, end]) => [`${start}-${end}`, `${aliases[start][0]}-${aliases[end][1]}`]);
 console.log("\\tikzset{");
-Object.entries(aliases).forEach(([k, v]) =>
-    console.log(tab + (getExt(k) == "A" ? `${v}-` : `-${v}`) + `/.style={${k}},`)
-);
-getCombos(names)
-    .map(([a, b]) => [a + "A", b + "B"])
-    .forEach(([a, b]) =>
-        console.log(`${tab}${aliases[a]}-${aliases[b]}/.style={${[a, b].join(", ")}},`)
-    );
-console.log("}");
+fullAliases.forEach(([name, abbr]) => console.log(`    ${abbr}/.style={${name}},`));
+console.log("}\n");
