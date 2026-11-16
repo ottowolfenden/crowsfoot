@@ -1,16 +1,10 @@
 {
-    "footA": ">",
-    "footB": "<",
-    "circA": "o",
-    "circB": "o",
-    "lineA": "|",
-    "lineB": "|",
-    "dlineA": "||",
-    "dlineB": "||",
-    "footcircA": ">o",
-    "footcircB": "o<",
-    "footlineA": ">|",
-    "footlineB": "|<",
-    "circlineA": "|o",
-    "circlineB": "o|"
+    "default": ["", ""],
+    "circ": ["o", "o"],
+    "line": ["|", "|"],
+    "foot": [">", "<"],
+    "linefoot": [">|", "|<"],
+    "circfoot": [">o", "o<"],
+    "doubleline": ["||", "||"],
+    "circline": ["|o", "o|"]
 }
