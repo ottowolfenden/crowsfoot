@@ -10,7 +10,7 @@ const fullAliases = allPairs(baseSymbols).map(([start, end]) => [
 console.log(
     linesToStr([
         "\\tikzset{",
-        ...fullAliases.map(([name, abbr]) => `    ${abbr}/.style={${name}},`),
+        ...fullAliases.map(([name, abbr]) => [1, `${abbr}/.style={${name}},`]),
         "}\n"
     ])
 );
