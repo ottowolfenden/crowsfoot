@@ -31,8 +31,7 @@
             \p2 = ($(\p{start})!0.5!(\p{end})$)
             in
             (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-            (\p2)
+            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
             (\p1) circle[radius=0.25cm]
             \tikztonodes
         }
@@ -46,6 +45,11 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            let
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            in
+            ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -148,8 +152,7 @@
             \p2 = ($(\p{start})!0.5!(\p{end})$)
             in
             (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-            (\p2)
+            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
             (\p1) circle[radius=0.25cm]
             \tikztonodes
         }
@@ -169,6 +172,11 @@
             (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
             (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
             (\p1) circle[radius=0.25cm]
+            let
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            in
+            ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -270,7 +278,11 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
-            % line END
+            let
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            in
+            (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
             \tikztonodes
         }
@@ -283,14 +295,17 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
-            % line END
+            let
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            in
+            (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             let
             \p1 = ($(\p{end})!0.65cm!(\p{start})$),
             \p2 = ($(\p{start})!0.5!(\p{end})$)
             in
             (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-            (\p2)
+            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
             (\p1) circle[radius=0.25cm]
             \tikztonodes
         }
@@ -303,7 +318,16 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
-            % line END
+            let
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            in
+            (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            let
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            in
+            ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -315,7 +339,11 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
-            % line END
+            let
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            in
+            (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -327,7 +355,11 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
-            % line END
+            let
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            in
+            (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -339,7 +371,11 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
-            % line END
+            let
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            in
+            (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -351,7 +387,11 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
-            % line END
+            let
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            in
+            (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -363,7 +403,11 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
-            % line END
+            let
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            in
+            (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -394,8 +438,7 @@
             \p2 = ($(\p{start})!0.5!(\p{end})$)
             in
             (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-            (\p2)
+            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
             (\p1) circle[radius=0.25cm]
             \tikztonodes
         }
@@ -409,6 +452,11 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             % foot END
+            let
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            in
+            ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -499,8 +547,7 @@
             \p2 = ($(\p{start})!0.5!(\p{end})$)
             in
             (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-            (\p2)
+            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
             (\p1) circle[radius=0.25cm]
             \tikztonodes
         }
@@ -514,6 +561,11 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             % linefoot END
+            let
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            in
+            ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -604,8 +656,7 @@
             \p2 = ($(\p{start})!0.5!(\p{end})$)
             in
             (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-            (\p2)
+            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
             (\p1) circle[radius=0.25cm]
             \tikztonodes
         }
@@ -619,6 +670,11 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             % circfoot END
+            let
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            in
+            ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -709,8 +765,7 @@
             \p2 = ($(\p{start})!0.5!(\p{end})$)
             in
             (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-            (\p2)
+            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
             (\p1) circle[radius=0.25cm]
             \tikztonodes
         }
@@ -724,6 +779,11 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             % doubleline END
+            let
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            in
+            ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },
@@ -812,8 +872,7 @@
             \p2 = ($(\p{start})!0.5!(\p{end})$)
             in
             (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-            (\p2)
+            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
             (\p1) circle[radius=0.25cm]
             \tikztonodes
         }
@@ -826,6 +885,11 @@
             \p{start} = (\tikztostart.{atan2(\y{e}-\y{s},\x{e}-\x{s})}),
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
+            let
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            in
+            ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
             \tikztonodes
         }
     },

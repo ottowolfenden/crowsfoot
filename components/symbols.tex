@@ -17,12 +17,21 @@ let
 \p2 = ($(\p{start})!0.5!(\p{end})$)
 in
 (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) --
-(\p2)
+($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
 (\p1) circle[radius=0.25cm]
 
 % line START
+let
+\p1 = ($(\p{start})!0.45cm!(\p{end})$)
+in
+(\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
 % line END
+let
+\p1 = ($(\p{end})!0.45cm!(\p{start})$)
+in
+($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
 
 % foot START
 % foot END
