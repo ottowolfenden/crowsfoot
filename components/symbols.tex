@@ -38,7 +38,21 @@ in
 (\p{perpA}) -- (\p{perpB})
 
 % foot START
+let
+\p1 = ($(\p{start})!0.5cm!(\p{end})$),
+\p{perpA} = ($(\p{start})!0.35cm!90:(\p{end})$),
+\p{perpB} = ($(\p{start})!0.35cm!-90:(\p{end})$)
+in
+(\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+(\p{perpA}) -- (\p1) -- (\p{perpB})
 % foot END
+let
+\p1 = ($(\p{end})!0.5cm!(\p{start})$),
+\p{perpA} = ($(\p{end})!0.35cm!90:(\p{start})$),
+\p{perpB} = ($(\p{end})!0.35cm!-90:(\p{start})$)
+in
+($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+(\p{perpA}) -- (\p1) -- (\p{perpB})
 
 % linefoot START
 % linefoot END
