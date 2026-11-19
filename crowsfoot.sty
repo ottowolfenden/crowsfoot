@@ -46,10 +46,12 @@
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
             let
-            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -173,10 +175,12 @@
             (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
             (\p1) circle[radius=0.25cm]
             let
-            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -279,10 +283,12 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
             \tikztonodes
         }
@@ -296,10 +302,12 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             let
             \p1 = ($(\p{end})!0.65cm!(\p{start})$),
             \p2 = ($(\p{start})!0.5!(\p{end})$)
@@ -319,15 +327,19 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             let
-            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -340,10 +352,12 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -356,10 +370,12 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -372,10 +388,12 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -388,10 +406,12 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -404,10 +424,12 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.45cm!(\p{end})$)
+            \p1 = ($(\p{start})!0.45cm!(\p{end})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -453,10 +475,12 @@
             in
             % foot END
             let
-            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -562,10 +586,12 @@
             in
             % linefoot END
             let
-            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -671,10 +697,12 @@
             in
             % circfoot END
             let
-            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -780,10 +808,12 @@
             in
             % doubleline END
             let
-            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },
@@ -886,10 +916,12 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{end})!0.45cm!(\p{start})$)
+            \p1 = ($(\p{end})!0.45cm!(\p{start})$),
+            \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+            \p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
             in
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-            ($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+            (\p{perpA}) -- (\p{perpB})
             \tikztonodes
         }
     },

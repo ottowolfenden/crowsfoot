@@ -22,16 +22,20 @@ in
 
 % line START
 let
-\p1 = ($(\p{start})!0.45cm!(\p{end})$)
+\p1 = ($(\p{start})!0.45cm!(\p{end})$),
+\p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+\p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
 in
 (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
-($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+(\p{perpA}) -- (\p{perpB})
 % line END
 let
-\p1 = ($(\p{end})!0.45cm!(\p{start})$)
+\p1 = ($(\p{end})!0.45cm!(\p{start})$),
+\p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+\p{perpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
 in
 ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
-($(\p1)+(0,-0.35)$) -- ($(\p1)+(0,0.35)$)
+(\p{perpA}) -- (\p{perpB})
 
 % foot START
 % foot END
