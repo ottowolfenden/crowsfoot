@@ -5,20 +5,24 @@
 
 % circ START
 let
-\p1 = ($(\p{start})!0.65cm!(\p{end})$),
-\p2 = ($(\p{start})!0.5!(\p{end})$)
+\n{offset} = {0.65cm},
+\n{radius} = {0.25cm},
+\p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+\p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
 in
-(\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-(\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-(\p1) circle[radius=0.25cm]
+(\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+(\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+(\p{centre}) circle[radius=\n{radius}]
 % circ END
 let
-\p1 = ($(\p{end})!0.65cm!(\p{start})$),
-\p2 = ($(\p{start})!0.5!(\p{end})$)
+\n{offset} = {0.65cm},
+\n{radius} = {0.25cm},
+\p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+\p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
 in
-(\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-(\p1) circle[radius=0.25cm]
+(\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+(\p{center}) circle[radius=\n{radius}]
 
 % line START
 let

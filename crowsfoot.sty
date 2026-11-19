@@ -27,12 +27,14 @@
             in
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
             let
-            \p1 = ($(\p{end})!0.65cm!(\p{start})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
             in
-            (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-            (\p1) circle[radius=0.25cm]
+            (\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+            ($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+            (\p{center}) circle[radius=\n{radius}]
             \tikztonodes
         }
     },
@@ -174,12 +176,14 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.65cm!(\p{end})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
             in
-            (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-            (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-            (\p1) circle[radius=0.25cm]
+            (\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+            (\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+            (\p{centre}) circle[radius=\n{radius}]
             ($(\p{start})!0.5!(\p{end})$) -- (\p{end})
             \tikztonodes
         }
@@ -193,19 +197,23 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.65cm!(\p{end})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
             in
-            (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-            (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-            (\p1) circle[radius=0.25cm]
+            (\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+            (\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+            (\p{centre}) circle[radius=\n{radius}]
             let
-            \p1 = ($(\p{end})!0.65cm!(\p{start})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
             in
-            (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-            (\p1) circle[radius=0.25cm]
+            (\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+            ($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+            (\p{center}) circle[radius=\n{radius}]
             \tikztonodes
         }
     },
@@ -218,12 +226,14 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.65cm!(\p{end})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
             in
-            (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-            (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-            (\p1) circle[radius=0.25cm]
+            (\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+            (\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+            (\p{centre}) circle[radius=\n{radius}]
             let
             \p1 = ($(\p{end})!0.45cm!(\p{start})$),
             \p{perpA} = ($(\p1)!0.35cm!90:(\p{end})$),
@@ -243,12 +253,14 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.65cm!(\p{end})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
             in
-            (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-            (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-            (\p1) circle[radius=0.25cm]
+            (\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+            (\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+            (\p{centre}) circle[radius=\n{radius}]
             let
             \p1 = ($(\p{end})!0.5cm!(\p{start})$),
             \p{perpA} = ($(\p{end})!0.35cm!90:(\p{start})$),
@@ -268,12 +280,14 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.65cm!(\p{end})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
             in
-            (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-            (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-            (\p1) circle[radius=0.25cm]
+            (\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+            (\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+            (\p{centre}) circle[radius=\n{radius}]
             let
             \p1 = ($(\p{end})!0.5cm!(\p{start})$),
             \p{footperpA} = ($(\p{end})!0.35cm!90:(\p{start})$),
@@ -296,12 +310,14 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.65cm!(\p{end})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
             in
-            (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-            (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-            (\p1) circle[radius=0.25cm]
+            (\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+            (\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+            (\p{centre}) circle[radius=\n{radius}]
             let
             \p1 = ($(\p{end})!0.76cm!(\p{start})$),
             \p2 = ($(\p{end})!0.5!(\p{start})$),
@@ -325,12 +341,14 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.65cm!(\p{end})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
             in
-            (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-            (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-            (\p1) circle[radius=0.25cm]
+            (\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+            (\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+            (\p{centre}) circle[radius=\n{radius}]
             let
             \p1 = ($(\p{end})!0.39cm!(\p{start})$),
             \p2 = ($(\p{end})!0.51cm!(\p{start})$),
@@ -354,12 +372,14 @@
             \p{end} = (\tikztotarget.{atan2(\y{e}-\y{s},\x{e}-\x{s})+180}),
             in
             let
-            \p1 = ($(\p{start})!0.65cm!(\p{end})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{centre} = ($(\p{start})!\n{offset}!(\p{end})$)
             in
-            (\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
-            (\p2) -- ($(\p{start})!0.65cm!(\p2)!0.25cm!(\p2)$)
-            (\p1) circle[radius=0.25cm]
+            (\p{start}) -- ($(\p{centre})!\n{radius}!(\p{start})$)
+            (\p{mid}) -- ($(\p{start})!\n{offset}!(\p{mid})!\n{radius}!(\p{mid})$)
+            (\p{centre}) circle[radius=\n{radius}]
             let
             \p1 = ($(\p{end})!0.8cm!(\p{start})$),
             \p2 = ($(\p{end})!0.5!(\p{start})$),
@@ -409,12 +429,14 @@
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
             (\p{perpA}) -- (\p{perpB})
             let
-            \p1 = ($(\p{end})!0.65cm!(\p{start})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
             in
-            (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-            (\p1) circle[radius=0.25cm]
+            (\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+            ($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+            (\p{center}) circle[radius=\n{radius}]
             \tikztonodes
         }
     },
@@ -618,12 +640,14 @@
             (\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
             (\p{perpA}) -- (\p1) -- (\p{perpB})
             let
-            \p1 = ($(\p{end})!0.65cm!(\p{start})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
             in
-            (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-            (\p1) circle[radius=0.25cm]
+            (\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+            ($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+            (\p{center}) circle[radius=\n{radius}]
             \tikztonodes
         }
     },
@@ -829,12 +853,14 @@
             (\p{perpA}) -- (\p1) -- (\p{perpB})
             ($(\p1)!0.35cm!90:(\p{end})$) -- ($(\p1)!0.35cm!-90:(\p{end})$)
             let
-            \p1 = ($(\p{end})!0.65cm!(\p{start})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
             in
-            (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-            (\p1) circle[radius=0.25cm]
+            (\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+            ($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+            (\p{center}) circle[radius=\n{radius}]
             \tikztonodes
         }
     },
@@ -1052,12 +1078,14 @@
             (\p1) circle[radius=0.25cm]
             (\p{perpA}) -- (\p3) -- (\p{perpB})
             let
-            \p1 = ($(\p{end})!0.65cm!(\p{start})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
             in
-            (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-            (\p1) circle[radius=0.25cm]
+            (\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+            ($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+            (\p{center}) circle[radius=\n{radius}]
             \tikztonodes
         }
     },
@@ -1293,12 +1321,14 @@
             (\p{perpA1}) -- (\p{perpB1})
             (\p{perpA2}) -- (\p{perpB2})
             let
-            \p1 = ($(\p{end})!0.65cm!(\p{start})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
             in
-            (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-            (\p1) circle[radius=0.25cm]
+            (\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+            ($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+            (\p{center}) circle[radius=\n{radius}]
             \tikztonodes
         }
     },
@@ -1534,12 +1564,14 @@
             (\p1) circle[radius=0.25cm]
             (\p{perpA}) -- (\p{perpB})
             let
-            \p1 = ($(\p{end})!0.65cm!(\p{start})$),
-            \p2 = ($(\p{start})!0.5!(\p{end})$)
+            \n{offset} = {0.65cm},
+            \n{radius} = {0.25cm},
+            \p{mid}    = ($(\p{start})!0.5!(\p{end})$),
+            \p{center} = ($(\p{end})!\n{offset}!(\p{start})$),
             in
-            (\p{end}) -- ($(\p{end})!0.65cm!(\p{start})!0.25cm!(\p{end})$)
-            ($(\p{end})!0.65cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
-            (\p1) circle[radius=0.25cm]
+            (\p{end}) -- ($(\p{end})!\n{offset}!(\p{start})!\n{radius}!(\p{end})$)
+            ($(\p{end})!\n{offset}!(\p{start})!-\n{radius}!(\p{end})$) -- (\p{mid})
+            (\p{center}) circle[radius=\n{radius}]
             \tikztonodes
         }
     },
