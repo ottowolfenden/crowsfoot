@@ -55,13 +55,98 @@ in
 (\p{perpA}) -- (\p1) -- (\p{perpB})
 
 % linefoot START
+let
+\p1 = ($(\p{start})!0.5cm!(\p{end})$),
+\p{perpA} = ($(\p{start})!0.35cm!90:(\p{end})$),
+\p{perpB} = ($(\p{start})!0.35cm!-90:(\p{end})$),
+in
+(\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+(\p{perpA}) -- (\p1) -- (\p{perpB})
+($(\p1)!0.35cm!90:(\p{end})$) -- ($(\p1)!0.35cm!-90:(\p{end})$)
 % linefoot END
+let
+\p1 = ($(\p{end})!0.5cm!(\p{start})$),
+\p{footperpA} = ($(\p{end})!0.35cm!90:(\p{start})$),
+\p{footperpB} = ($(\p{end})!0.35cm!-90:(\p{start})$),
+\p{lineperpA} = ($(\p1)!0.35cm!90:(\p{end})$),
+\p{lineperpB} = ($(\p1)!0.35cm!-90:(\p{end})$)
+in
+($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+(\p{footperpA}) -- (\p1) -- (\p{footperpB})
+(\p{lineperpA}) -- (\p{lineperpB})
 
 % circfoot START
+let
+\p1 = ($(\p{start})!0.76cm!(\p{end})$),
+\p2 = ($(\p{start})!0.5!(\p{end})$),
+\p3 = ($(\p{start})!0.5cm!(\p{end})$),
+\p{perpA} = ($(\p{start})!0.35cm!90:(\p{end})$),
+\p{perpB} = ($(\p{start})!0.35cm!-90:(\p{end})$)
+in
+(\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
+(\p2) -- ($(\p{start})!0.76cm!(\p2)!0.25cm!(\p2)$)
+(\p1) circle[radius=0.25cm]
+(\p{perpA}) -- (\p3) -- (\p{perpB})
 % circfoot END
+let
+\p1 = ($(\p{end})!0.76cm!(\p{start})$),
+\p2 = ($(\p{end})!0.5!(\p{start})$),
+\p3 = ($(\p{end})!0.5cm!(\p{start})$),
+\p{perpA} = ($(\p{end})!0.35cm!90:(\p{start})$),
+\p{perpB} = ($(\p{end})!0.35cm!-90:(\p{start})$)
+in
+(\p{end}) -- ($(\p{end})!0.76cm!(\p{start})!0.25cm!(\p{end})$)
+($(\p{end})!0.76cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
+(\p1) circle[radius=0.25cm]
+(\p{perpA}) -- (\p3) -- (\p{perpB})
 
 % doubleline START
+let
+\p1 = ($(\p{start})!0.39cm!(\p{end})$),
+\p2 = ($(\p{start})!0.51cm!(\p{end})$),
+\p{perpA1} = ($(\p1)!0.35cm!90:(\p{end})$),
+\p{perpB1} = ($(\p1)!0.35cm!-90:(\p{end})$),
+\p{perpA2} = ($(\p2)!0.35cm!90:(\p{end})$),
+\p{perpB2} = ($(\p2)!0.35cm!-90:(\p{end})$)
+in
+(\p{start}) -- ($(\p{start})!0.5!(\p{end})$)
+(\p{perpA1}) -- (\p{perpB1})
+(\p{perpA2}) -- (\p{perpB2})
 % doubleline END
+let
+\p1 = ($(\p{end})!0.39cm!(\p{start})$),
+\p2 = ($(\p{end})!0.51cm!(\p{start})$),
+\p{perpA1} = ($(\p1)!0.35cm!90:(\p{end})$),
+\p{perpB1} = ($(\p1)!0.35cm!-90:(\p{end})$),
+\p{perpA2} = ($(\p2)!0.35cm!90:(\p{end})$),
+\p{perpB2} = ($(\p2)!0.35cm!-90:(\p{end})$)
+in
+($(\p{start})!0.5!(\p{end})$) -- (\p{end})
+(\p{perpA1}) -- (\p{perpB1})
+(\p{perpA2}) -- (\p{perpB2})
 
 % circline START
+let
+\p1 = ($(\p{start})!0.8cm!(\p{end})$),
+\p2 = ($(\p{start})!0.5!(\p{end})$),
+\p3 = ($(\p{start})!0.26cm!(\p{end})$),
+\p{perpA} = ($(\p3)!0.35cm!90:(\p{end})$),
+\p{perpB} = ($(\p3)!0.35cm!-90:(\p{end})$)
+in
+(\p{start}) -- ($(\p1)!0.25cm!(\p{start})$)
+(\p2) -- ($(\p{start})!0.8cm!(\p2)!0.25cm!(\p2)$)
+(\p1) circle[radius=0.25cm]
+(\p{perpA}) -- (\p{perpB})
 % circline END
+let
+\p1 = ($(\p{end})!0.8cm!(\p{start})$),
+\p2 = ($(\p{end})!0.5!(\p{start})$),
+\p3 = ($(\p{end})!0.26cm!(\p{start})$),
+\p{perpA} = ($(\p3)!0.35cm!90:(\p{start})$),
+\p{perpB} = ($(\p3)!0.35cm!-90:(\p{start})$)
+in
+(\p{end}) -- ($(\p{end})!0.8cm!(\p{start})!0.25cm!(\p{end})$)
+($(\p{end})!0.8cm!(\p{start})!-0.25cm!(\p{end})$) -- (\p2)
+(\p1) circle[radius=0.25cm]
+(\p{perpA}) -- (\p{perpB})
+%
