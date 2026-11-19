@@ -14,16 +14,20 @@ cd "$(dirname "${BASH_SOURCE[0]}")"/..
 
 tex-fmt crowsfoot.sty --noconfig --nowrap --tabsize 4
 
+{
+    echo '\AtBeginDocument{\color{white}}'
+    cat examples.tex
+} > "tmp.tex"
+
 rm -rf svgs
 mkdir -p svgs
 
-{
-    echo '\AtBeginDocument{\color{white}}'
-    cat example.tex
-} > "tmp.tex"
+latexmk --lualatex --auxdir=aux examples.tex
+latexmk --latex --auxdir=aux examples.tex tmp.tex
 
-latexmk --lualatex --auxdir=aux example.tex
-latexmk --latex --auxdir=aux example.tex tmp.tex
-dvisvgm --no-fonts --page=1- --exact --output="svgs/%p-black.svg" example.dvi
+rm tmp.tex
+
+dvisvgm --no-fonts --page=1- --exact --output="svgs/%p-black.svg" examples.dvi
 dvisvgm --no-fonts --page=1- --exact --output="svgs/%p-white.svg" tmp.dvi
-rm example.dvi tmp.dvi tmp.tex
+
+rm examples.dvi tmp.dvi
